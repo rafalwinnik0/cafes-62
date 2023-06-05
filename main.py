@@ -33,8 +33,8 @@ def add_cafe():
     form = CafeForm()
     if form.validate_on_submit():
         with open('cafe-data.csv', 'a') as csv_file:
-            csv_file.write(f"/n{form.cafe.data}, {form.location.data}, {form.open.data},"
-                           f" {form.close.data}, {form.coffee_rating.data}, {form.wifi_rating},"
+            csv_file.write(f"\n{form.cafe.data}, {form.location.data}, {form.open.data},"
+                           f" {form.close.data}, {form.coffee_rating.data}, {form.wifi_rating.data},"
                            f"{form.power_rating.data}")
         return redirect(url_for('cafes'))
     return render_template('add.html', form=form)
